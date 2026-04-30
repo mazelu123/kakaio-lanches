@@ -206,18 +206,25 @@ function enviarPedido() {
     alert("Tela de finalização concluída! Tudo pronto para a etapa de envio.");
 }// Função que monta o pedido e envia para o WhatsApp
 function enviarPedido() {
+    const nome = document.getElementById('nome').value;
     const endereco = document.getElementById('endereco').value;
     const pagamento = document.getElementById('pagamento').value;
     const observacao = document.getElementById('observacao').value;
     let troco = '';
 
-    // Validação de endereço
+    // Validação do nome
+    if (nome.trim() === '') {
+        alert("Por favor, preencha seu nome!");
+        return;
+    }
+
+    // Validação do endereço
     if (endereco.trim() === '') {
         alert("Por favor, preencha o endereço de entrega!");
         return;
     }
 
-    // Verifica se precisa de troco
+    // Verifica troco
     if (pagamento === 'especie') {
         const valorTroco = document.getElementById('troco').value;
         if (valorTroco) {
@@ -227,11 +234,13 @@ function enviarPedido() {
         }
     }
 
-    // Montando a mensagem para o WhatsApp
+    // Montando mensagem
     let textoPedido = `*NOVO PEDIDO - KAKAIO LANCHES* 🍔🍟\n\n`;
+    textoPedido += `👤 *Cliente:* ${nome}\n\n`;
     textoPedido += `*Detalhes do Pedido:*\n`;
 
     let total = 0;
+
     carrinho.forEach(item => {
         let subtotal = item.preco * item.quantidade;
         total += subtotal;
@@ -241,29 +250,20 @@ function enviarPedido() {
     textoPedido += `\n*Total a pagar:* R$ ${total.toFixed(2).replace('.', ',')}\n`;
     textoPedido += `\n🚚 *Dados da Entrega:*\n`;
     textoPedido += `*Endereço:* ${endereco}\n`;
-    
-    // Formatando o nome do pagamento
+
     let nomePagamento = "";
-    if(pagamento === 'pix') nomePagamento = "Pix";
-    if(pagamento === 'cartao') nomePagamento = "Cartão";
-    if(pagamento === 'especie') nomePagamento = "Dinheiro";
+    if (pagamento === 'pix') nomePagamento = "Pix";
+    if (pagamento === 'cartao') nomePagamento = "Cartão";
+    if (pagamento === 'especie') nomePagamento = "Dinheiro";
 
     textoPedido += `*Forma de Pagamento:* ${nomePagamento}${troco}\n`;
-    
+
     if (observacao.trim() !== '') {
         textoPedido += `\n📝 *Observações:* ${observacao}`;
     }
 
-    // DDI (55) + DDD + Seu Número de WhatsApp
-    // MUDE O NÚMERO ABAIXO PARA O SEU WHATSAPP REAL! (Apenas números)
     const numeroWhatsApp = "8496263793"; 
-    
-    // Cria o link e redireciona o cliente
+
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoPedido)}`;
     window.open(url, '_blank');
-    
-    // Opcional: Esvaziar o carrinho e fechar a tela após enviar
-    // carrinho = [];
-    // atualizarCarrinho();
-    // fecharFinalizacao();
 }
