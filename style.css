@@ -1,17 +1,13 @@
-/* ===== RESET E BASE ===== */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF8F2;
 }
 
-/* ===== TOPO ===== */
+/* TOPO */
 .top-bar {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: linear-gradient(90deg, #8B0000, #b22222);
+    background-color: #7A1C1C;
     height: 55px;
     display: flex;
     justify-content: flex-end;
@@ -19,151 +15,108 @@ body {
     padding: 0 15px;
 }
 
+/* CARRINHO */
 .carrinho-btn {
-    background: #fff;
-    color: #8B0000;
+    background-color: #FFB703;
+    color: #7A1C1C;
     padding: 6px 14px;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: bold;
-    display: flex;
-    gap: 6px;
 }
 
-/* ===== HERO ===== */
+/* CABEÇALHO */
 .estamos-abertos {
-    background: linear-gradient(135deg, #8B0000, #580d0d);
-    border-radius: 15px;
-    margin: 15px;
-    padding: 50px 20px;
-    text-align: center;
+    background: linear-gradient(135deg, #7A1C1C, #9e2a2a);
     color: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-radius: 15px;
 }
 
 .status-estamos {
-    font-size: 1.8rem;
+    color: #fff;
 }
 
 .palavra-aberta {
-    font-size: 3.5rem;
-    color: #ffcc00;
+    color: #FFB703;
+    -webkit-text-stroke: 1px #FFB703;
 }
 
-/* ===== CARDÁPIO ===== */
+/* CARDÁPIO */
 .cardapio {
-    margin: 10px;
+    background-color: transparent;
 }
 
-/* ===== MENU HORIZONTAL ===== */
+/* MENU DE CATEGORIAS */
 .tags-cardapio {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px 5px;
+    background-color: #FFF8F2;
+    border-bottom: 1px solid #eee;
 }
 
 .opcoes {
-    background: #fff;
-    color: #8B0000;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid #ddd;
-}
-
-/* ===== SEÇÕES ===== */
-.titulo-secao {
-    margin: 15px 0 10px;
+    background-color: #eee;
+    color: #333;
+    font-family: Arial, sans-serif;
     font-weight: bold;
-    font-size: 1.3rem;
-    color: #8B0000;
 }
 
-/* ===== CARDS DOS ITENS ===== */
+.opcoes:hover {
+    background-color: #FFB703;
+    color: #7A1C1C;
+}
+
+/* SEÇÕES */
+.titulo-secao {
+    color: #7A1C1C;
+    border-bottom: 2px solid #FFB703;
+}
+
+/* ITENS */
 .item-cardapio {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #fff;
-    margin-bottom: 10px;
-    padding: 12px;
+    background-color: #FFFFFF;
     border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #FFB703;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .nome-item {
-    font-size: 1rem;
-    font-weight: bold;
+    color: #222;
 }
 
 .descricao-item {
-    font-size: 0.8rem;
-    color: #777;
+    color: #666;
 }
 
 .preco-item {
-    font-weight: bold;
-    color: #8B0000;
+    color: #7A1C1C;
 }
 
-/* ===== BOTÃO + ===== */
+/* BOTÃO + */
 .btn-add {
-    background: #ffcc00;
-    border: none;
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
+    background-color: #FFB703;
+    color: #7A1C1C;
 }
 
-/* ===== CARRINHO MODAL ===== */
-#modal-carrinho,
-#modal-finalizacao {
-    background: rgba(0,0,0,0.6);
-}
-
+/* MODAL */
 .conteudo-carrinho {
-    background: #fff;
     border-radius: 20px 20px 0 0;
 }
 
-/* ===== BOTÕES ===== */
 .btn-finalizar,
-.btn-enviar {
-    background: #25D366;
-    border-radius: 12px;
-    font-size: 1.1rem;
-}
-
-.btn-voltar {
-    border-radius: 12px;
-}
-
-/* ===== BOTÃO FIXO ===== */
+.btn-enviar,
 .Finalizar-pedido {
-    position: fixed;
-    bottom: 15px;
-    left: 5%;
-    width: 90%;
-    background: #25D366;
-    padding: 15px;
-    border-radius: 15px;
+    background-color: #25D366;
+    color: white;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== INPUTS ===== */
+/* INPUTS */
 .form-finalizacao input,
 .form-finalizacao select,
 .form-finalizacao textarea {
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
 }
 
-/* ===== ANIMAÇÃO ===== */
-.btn-add:active,
-.carrinho-btn:active {
-    transform: scale(0.95);
+/* BOTÃO VOLTAR */
+.btn-voltar {
+    background-color: #eee;
 }
