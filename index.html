@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakaio Lanches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="top-bar">
+        <div class="carrinho-btn" onclick="toggleCarrinho()">
+            🛒 <span id="carrinho-contador">0</span>
+        </div>
+        
+    </div>
+    
+    <section class="estamos-abertos">
+        <div class="efeito-abertos-container">
+            <h2 class="status-estamos" style="font-family: Impact, Black, 'Arial Narrow Bold', sans-serif;">JÁ ESTAMOS</h2>
+            <div class="status-abertos-stack">
+                <h1 class="palavra-aberta" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">ABERTOS</h1>
+                <h1 class="palavra-aberta" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">ABERTOS</h1>
+                <h1 class="palavra-aberta" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">ABERTOS</h1>
+                
+                <img id="hamburguer-img" src="imgs/hamburguer.png" alt="Hamburguer">
+            </div>
+        </div>
+    </section>
+
+    <section class="cardapio">
+        <div class="tags-cardapio">
+            <h2 class="titulo-tag" style="color: white; font-family: Impact, sans-serif;">CARDÁPIO</h2>
+            <a href="#cat-combos" class="opcoes">combos</a>
+            <a href="#cat-tradicionais" class="opcoes">tradicionais</a>
+            <a href="#cat-artesanais" class="opcoes">artesanais</a>
+            <a href="#cat-porcoes" class="opcoes">porções</a>
+            <a href="#cat-bebidas" class="opcoes">bebidas</a>
+            <a href="#cat-sobremesas" class="opcoes">sobremesas</a>
+        </div>
+
+        <div class="todos-itens-container">
+            
+            <div id="cat-combos" class="secao-menu">
+                <h3 class="titulo-secao">Combos</h3>
+                
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Combo Família (#1)</h3>
+                        <p class="descricao-item">4 Burg + Refrigerante 1 Litro</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 57,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Combo Família', 57.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Combo Especial (#2)</h3>
+                        <p class="descricao-item">2 Burger + 2 Caçulinhas</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 31,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Combo Especial', 31.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Super Combo (#3)</h3>
+                        <p class="descricao-item">1 Gigantão + 1 Ref. Lata 350ml</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 28,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Super Combo', 28.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Combo Kids</h3>
+                        <p class="descricao-item">1 Torrada + 1 Suco Natural</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 11,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Combo Kids', 11.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Mega Combo 1</h3>
+                        <p class="descricao-item">1 X-Bacon + 1 Caçulinha</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 16,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Mega Combo 1', 16.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Super Combo 2</h3>
+                        <p class="descricao-item">1 X-Frango + 1 Caçulinha</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 18,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Super Combo 2', 18.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Mega Combo 2</h3>
+                        <p class="descricao-item">1 X-Tudo + 1 Caçulinha</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 21,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Mega Combo 2', 21.99)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cat-tradicionais" class="secao-menu">
+                <h3 class="titulo-secao">Tradicionais</h3>
+                
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Torrada</h3>
+                        <p class="descricao-item">Pão, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Torrada', 6.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Hambúrguer Simples</h3>
+                        <p class="descricao-item">Pão, hambúrguer, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 10,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Hambúrguer Simples', 10.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">X-Burg</h3>
+                        <p class="descricao-item">Pão, hambúrguer, ovo, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 12,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('X-Burg', 12.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">X-Bacon</h3>
+                        <p class="descricao-item">Pão, hambúrguer, bacon, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 13,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('X-Bacon', 13.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">X-Tudo</h3>
+                        <p class="descricao-item">Pão, hambúrguer, ovo, frango, bacon, calabresa, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 18,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('X-Tudo', 18.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">X-Picanha</h3>
+                        <p class="descricao-item">Pão, hambúrguer de picanha, cebola, ovo, catupiry, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 15,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('X-Picanha', 15.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Sertanejo</h3>
+                        <p class="descricao-item">Pão, hambúrguer de picanha, cebola, queijo, queijo de coalho, catupiry e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 16,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Sertanejo', 16.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">X-Calabresa</h3>
+                        <p class="descricao-item">Pão, hambúrguer, calabresa, cebola, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 15,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('X-Calabresa', 15.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">X-Frango</h3>
+                        <p class="descricao-item">Pão, hambúrguer, frango, catupiry, presunto, queijo e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 15,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('X-Frango', 15.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Gigantão</h3>
+                        <p class="descricao-item">Pão, dois hambúrgueres, dois ovos, cebola, dois presuntos, dois queijos, e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 23,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Gigantão', 23.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Super Monstrão</h3>
+                        <p class="descricao-item">Dois pães, três hambúrgueres, três ovos, cebola, queijo, três presuntos e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 30,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Super Monstrão', 30.00)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cat-artesanais" class="secao-menu">
+                <h3 class="titulo-secao">Artesanais</h3>
+                
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Artesanal Simples</h3>
+                        <p class="descricao-item">Pão, hambúrguer artesanal, cheddar e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 18,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Artesanal Simples', 18.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Artesanal de Bacon</h3>
+                        <p class="descricao-item">Pão, hambúrguer artesanal, bacon, cheddar, cebola e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 19,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Artesanal de Bacon', 19.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Artesanal com Ovo</h3>
+                        <p class="descricao-item">Pão, hambúrguer artesanal, ovo, cheddar, cebola e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 19,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Artesanal com Ovo', 19.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Artesanal Duplo</h3>
+                        <p class="descricao-item">Pão, dois hambúrgueres, dois ovos, cheddar, cebola e salada</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 25,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Artesanal Duplo', 25.00)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cat-porcoes" class="secao-menu">
+                <h3 class="titulo-secao">Salgados e Batata Frita</h3>
+                
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Salgados</h3>
+                        <p class="descricao-item">Unidade</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 3,99</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Salgados', 3.99)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Batata Frita P</h3>
+                        <p class="descricao-item">Porção Pequena</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 12,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Batata Frita P', 12.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Batata Frita G</h3>
+                        <p class="descricao-item">Porção Grande</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 20,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Batata Frita G', 20.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Batata Frita Suprema</h3>
+                        <p class="descricao-item">Porção Suprema</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 22,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Batata Frita Suprema', 22.00)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cat-bebidas" class="secao-menu">
+                <h3 class="titulo-secao">Bebidas</h3>
+                
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Água Mineral</h3>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 3,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Água Mineral', 3.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Refri Lata</h3>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Refri Lata', 6.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Refri 600ml</h3>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 8,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Refri 600ml', 8.00)">+</button>
+                    </div>
+                </div>
+
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Refri 1 Litro</h3>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 10,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Refri 1 Litro', 10.00)">+</button>
+                    </div>
+                </div>
+
+                <h3 class="titulo-secao" style="margin-top: 20px;">Sucos e Vitaminas</h3>
+
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Morango</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Morango', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Uva</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Uva', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Graviola</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Graviola', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Cajá</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Cajá', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Acerola</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Acerola', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Manga</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Manga', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Mangaba</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Mangaba', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Maracujá</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Maracujá', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Goiaba</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Goiaba', 6.00)">+</button>
+                    </div>
+                </div>
+                <div class="item-cardapio">
+                    <div class="info-item"><h3 class="nome-item">Suco de Laranja</h3></div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 6,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Suco de Laranja', 6.00)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cat-sobremesas" class="secao-menu">
+                <h3 class="titulo-secao">Sobremesas</h3>
+                <div class="item-cardapio">
+                    <div class="info-item">
+                        <h3 class="nome-item">Nega Maluca</h3>
+                        <p class="descricao-item">Fatia de bolo de chocolate</p>
+                    </div>
+                    <div class="preco-acoes">
+                        <div class="preco-item">R$ 10,00</div>
+                        <button class="btn-add" onclick="adicionarAoCarrinho('Nega Maluca', 10.00)">+</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="modal-carrinho" class="escondido">
+        <div class="conteudo-carrinho">
+            <div class="cabecalho-carrinho">
+                <h2>Seu Carrinho</h2>
+                <button class="btn-fechar" onclick="toggleCarrinho()">X</button>
+            </div>
+            
+            <div id="lista-carrinho">
+                </div>
+            
+            <div class="rodape-carrinho">
+                <h3>Total: R$ <span id="total-carrinho">0,00</span></h3>
+                
+                <button class="btn-finalizar" onclick="abrirFinalizacao()">Continuar Pedido</button>
+            </div>
+        </div>
+        
+    </div>
+    <div id="modal-finalizacao" class="escondido">
+        <div class="conteudo-carrinho" style="max-height: 90vh; overflow-y: auto;">
+            <div class="cabecalho-carrinho">
+                <h2>Finalizar Pedido</h2>
+                <button class="btn-fechar" onclick="fecharFinalizacao()">X</button>
+            </div>
+            
+            <div id="lista-final" style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+                </div>
+
+            <div class="resumo-pedido">
+                <h3 style="color: #580d0d; margin-top: 0;">Total a Pagar: R$ <span id="total-final">0,00</span></h3>
+            </div>
+
+            <div class="form-finalizacao">
+                <label for="endereco">Endereço de Entrega:</label>
+                <input type="text" id="endereco" placeholder="Rua, Número, Bairro e Ponto de Referência" required>
+
+                <label for="pagamento">Forma de Pagamento:</label>
+                <select id="pagamento" onchange="verificarTroco()">
+                    <option value="pix">Pix</option>
+                    <option value="cartao">Cartão (Crédito/Débito)</option>
+                    <option value="especie">Espécie (Dinheiro)</option>
+                </select>
+
+                <div id="troco-div" style="display:none; flex-direction: column;">
+                    <label for="troco">Troco para quanto?</label>
+                    <input type="number" id="troco" placeholder="Ex: 50 (Deixe em branco se não precisar)">
+                </div>
+
+                <label for="observacao">Observações (Opcional):</label>
+                <textarea id="observacao" rows="3" placeholder="Ex: Tirar cebola, maionese à parte..."></textarea>
+            </div>
+            
+            <div class="rodape-carrinho" style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="btn-voltar" onclick="voltarParaCarrinho()">Voltar</button>
+                <button class="btn-enviar" onclick="enviarPedido()">Concluir</button>
+            </div>
+        </div>
+    </div>
+    <button onclick="toggleCarrinho()" class="Finalizar-pedido"> FINALIZAR PEDIDO</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
