@@ -509,28 +509,28 @@
                 <h3 style="color: #580d0d; margin-top: 0;">Total a Pagar: R$ <span id="total-final">0,00</span></h3>
             </div>
 
-            <div class="form-finalizacao">
-                <label for="nome">Nome do Cliente:</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>    
-                
-                <label for="endereco">Endereço de Entrega:</label>
-                <input type="text" id="endereco" placeholder="Rua, Número, Bairro e Ponto de Referência" required>
+       <div class="form-finalizacao">
+<label for="nome">Nome do Cliente:</label>
+<input type="text" id="nome" placeholder="Digite seu nome" required>
 
-                <label for="pagamento">Forma de Pagamento:</label>
-                <select id="pagamento" onchange="verificarTroco()">
-                    <option value="pix">Pix</option>
-                    <option value="cartao">Cartão (Crédito/Débito)</option>
-                    <option value="especie">Espécie (Dinheiro)</option>
-                </select>
+<label for="endereco">Endereço de Entrega:</label>
+<input type="text" id="endereco" placeholder="Rua, Número, Bairro e Ponto de Referência" required>
 
-                <div id="troco-div" style="display:none; flex-direction: column;">
-                    <label for="troco">Troco para quanto?</label>
-                    <input type="number" id="troco" placeholder="Ex: 50 (Deixe em branco se não precisar)">
-                </div>
+<label for="pagamento">Forma de Pagamento:</label>
+<select id="pagamento" onchange="verificarTroco()">
+    <option value="pix">Pix</option>
+    <option value="cartao">Cartão (Crédito/Débito)</option>
+    <option value="especie">Espécie (Dinheiro)</option>
+</select>
 
-                <label for="observacao">Observações (Opcional):</label>
-                <textarea id="observacao" rows="3" placeholder="Ex: Tirar cebola, maionese à parte..."></textarea>
-            </div>
+<div id="troco-div" style="display:none; flex-direction: column;">
+    <label for="troco">Troco para quanto?</label>
+    <input type="number" id="troco" placeholder="Ex: 50 (Deixe em branco se não precisar)">
+</div>
+
+<label for="observacao">Observações (Opcional):</label>
+<textarea id="observacao" rows="3" placeholder="Ex: Tirar cebola, maionese à parte..."></textarea>
+</div>
             
             <div class="rodape-carrinho" style="display: flex; gap: 10px; margin-top: 20px;">
                 <button class="btn-voltar" onclick="voltarParaCarrinho()">Voltar</button>
