@@ -1,122 +1,505 @@
+/* =========================================
+   SITE ADAPTADO PARA CELULARES
+========================================= */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #FFF8F2;
+    background-color: #ffd7b6; /* Fundo mais escuro para as caixas saltarem na tela */
+    scroll-behavior: smooth; /* Efeito de rolagem suave ao clicar nos botões */
 }
 
-/* TOPO */
 .top-bar {
-    background-color: #7A1C1C;
-    height: 55px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 15px;
+    background-color: #a52a2a;
+    height: 50px;
+    width: 100%;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* CARRINHO */
-.carrinho-btn {
-    background-color: #FFB703;
-    color: #7A1C1C;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-/* CABEÇALHO */
+/* =========================================
+   CABEÇALHO (ESTAMOS ABERTOS)
+========================================= */
 .estamos-abertos {
-    background: linear-gradient(135deg, #7A1C1C, #9e2a2a);
-    color: white;
-    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #580d0d;
+    padding: 60px 15px; 
+    border-radius: 10px;
+    width: 92%; /* Otimizado para usar melhor a tela do celular */
+    margin-left: auto;  
+    margin-right: auto;
+    overflow: visible; 
+    box-sizing: border-box; /* Impede que o padding quebre o tamanho */
+}
+
+#estamos-abertos-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.efeito-abertos-container {
+    text-align: center;
+    text-transform: uppercase; 
+    letter-spacing: -1px; 
+    line-height: 1; 
 }
 
 .status-estamos {
-    color: #fff;
+    color: #FFFFFF; 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+    margin-bottom: -5px; 
+}
+
+.status-abertos-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .palavra-aberta {
-    color: #FFB703;
-    -webkit-text-stroke: 1px #FFB703;
+    color: #f2a900; 
+    font-size: 4.5rem; 
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    line-height: 0.85; 
+    -webkit-text-stroke: 1.5px #f2a900; 
+    transition: 0.2s ease;
 }
 
-/* CARDÁPIO */
+.status-abertos-stack .palavra-aberta:nth-child(1) {
+    opacity: 1;
+    z-index: 3; 
+}
+
+.status-abertos-stack .palavra-aberta:nth-child(2) {
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.status-abertos-stack .palavra-aberta:nth-child(3) {
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#hamburguer-img {
+    position: absolute; 
+    z-index: 10;       
+    width: 280px;      
+    height: auto;
+    top: 40px;         
+    bottom: -20px;      
+    left: 50%;
+    transform: translateX(-50%); 
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.6));
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+   CARDÁPIO E MENU DESLIZANTE
+========================================= */
 .cardapio {
-    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 20px;
+    background-color: #580d0d;
+    padding: 15px;
+    border-radius: 10px;
+    width: 92%; /* Otimizado para usar melhor a tela do celular */
+    margin-left: auto;  
+    margin-right: auto;
+    margin-bottom: 40px;
+    overflow: visible; 
+    box-sizing: border-box;
 }
 
-/* MENU DE CATEGORIAS */
 .tags-cardapio {
-    background-color: #FFF8F2;
-    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #580d0d;
+    padding: 15px 5px;
+    display: flex;
+    flex-wrap: nowrap; /* Impede botões de caírem para a linha de baixo */
+    overflow-x: auto; /* Habilita rolagem lateral */
+    gap: 10px;
+    -webkit-overflow-scrolling: touch; /* Rolagem suave em iPhones */
+    border-bottom: 2px solid #3b0808;
+    margin-bottom: 20px;
+}
+
+/* Oculta a barra de rolagem visual do menu lateral */
+.tags-cardapio::-webkit-scrollbar {
+    display: none;
+}
+
+.titulo-tag {
+    display: none; /* Oculto para economizar espaço valioso no topo do app */
 }
 
 .opcoes {
-    background-color: #eee;
-    color: #333;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #f2a900;
+    color: #580d0d;
+    border: none;
+    border-radius: 100px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap; /* Evita que o texto quebre */
+    flex-shrink: 0; /* Impede o botão de ser esmagado */
 }
 
-.opcoes:hover {
-    background-color: #FFB703;
-    color: #7A1C1C;
+/* =========================================
+   ITENS DO CARDÁPIO
+========================================= */
+.todos-itens-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* SEÇÕES */
+.secao-menu {
+    padding-top: 70px; /* Compensação para a barra fixa no topo */
+    margin-bottom: 20px;
+    margin-top: -50px; 
+}
+
 .titulo-secao {
-    color: #7A1C1C;
-    border-bottom: 2px solid #FFB703;
+    font-family: Impact, sans-serif;
+    color: #f2a900;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f2a900;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    margin-top: 0;
 }
 
-/* ITENS */
 .item-cardapio {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    border-left: 5px solid #FFB703;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #f2a900;
+}
+
+.info-item {
+    color: white;
+    max-width: 70%; /* Evita que o texto invada o preço */
 }
 
 .nome-item {
-    color: #222;
+    font-family: Impact, sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .descricao-item {
-    color: #666;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin: 4px 0 0 0;
+    line-height: 1.2;
 }
 
 .preco-item {
-    color: #7A1C1C;
+    font-family: Impact, sans-serif;
+    color: #f2a900;
+    font-size: 1.2rem;
+    white-space: nowrap; /* Mantém o R$ junto com o número */
 }
 
-/* BOTÃO + */
+/* =========================================
+   CARRINHO E BOTÕES DE AÇÃO
+========================================= */
+
+/* Top bar ajustada para o carrinho */
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.carrinho-btn {
+    background-color: #f2a900;
+    color: #580d0d;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#carrinho-contador {
+    background-color: #fff;
+    color: #a52a2a;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+}
+
+/* Área de preço e botão + nos itens do cardápio */
+.preco-acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
 .btn-add {
-    background-color: #FFB703;
-    color: #7A1C1C;
+    background-color: #f2a900;
+    color: #580d0d;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-/* MODAL */
+.btn-add:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   MODAL DO CARRINHO (Aba que sobe)
+========================================= */
+#modal-carrinho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: opacity 0.3s;
+}
+
+#modal-carrinho.escondido {
+    display: none;
+    opacity: 0;
+}
+
 .conteudo-carrinho {
+    background-color: #fff;
+    width: 100%;
+    max-height: 80vh;
     border-radius: 20px 20px 0 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-.btn-finalizar,
-.btn-enviar,
-.Finalizar-pedido {
-    background-color: #25D366;
-    color: white;
+.cabecalho-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.cabecalho-carrinho h2 {
+    margin: 0;
+    color: #580d0d;
+    font-family: Impact, sans-serif;
+}
+
+.btn-fechar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #a52a2a;
+    cursor: pointer;
+}
+
+#lista-carrinho {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.item-no-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item-carrinho h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.info-item-carrinho span {
+    color: #580d0d;
     font-weight: bold;
 }
 
-/* INPUTS */
-.form-finalizacao input,
-.form-finalizacao select,
-.form-finalizacao textarea {
-    border-radius: 10px;
-    border: 1px solid #ddd;
+.controles-qtd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* BOTÃO VOLTAR */
+.controles-qtd button {
+    background-color: #f2a900;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #580d0d;
+}
+
+.rodape-carrinho {
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+}
+
+.rodape-carrinho h3 {
+    margin: 0 0 15px 0;
+    color: #580d0d;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-finalizar {
+    width: 100%;
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Finalizar-pedido{
+    margin-top: auto;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding: 10px 20px;
+    display: block;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+/* =========================================
+   MODAL DE FINALIZAÇÃO E FORMULÁRIO
+========================================= */
+#modal-finalizacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001; /* Fica acima de tudo */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: opacity 0.3s;
+}
+
+#modal-finalizacao.escondido {
+    display: none;
+    opacity: 0;
+}
+
+.form-finalizacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-finalizacao label {
+    font-weight: bold;
+    color: #580d0d;
+    margin-top: 5px;
+    font-size: 0.95rem;
+}
+
+.form-finalizacao input, 
+.form-finalizacao select, 
+.form-finalizacao textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #f9f9f9;
+}
+
+.form-finalizacao input:focus, 
+.form-finalizacao select:focus, 
+.form-finalizacao textarea:focus {
+    outline: none;
+    border-color: #f2a900;
+}
+
+#lista-final p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 0.95rem;
+}
+
 .btn-voltar {
-    background-color: #eee;
+    flex: 1;
+    background-color: #ddd;
+    color: #580d0d;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-enviar {
+    flex: 2;
+    background-color: #25D366; /* Verde sucesso */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
 }
