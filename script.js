@@ -82,7 +82,7 @@ function adicionarAoCarrinho(nome, preco) {
     }
     
     atualizarInterfaceCarrinho();
-    alert("Item adicionado")
+    //alert("Item adicionado")
 }
 
 // Função para botões de "+" e "-" dentro do carrinho
